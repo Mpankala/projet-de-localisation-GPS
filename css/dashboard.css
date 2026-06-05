@@ -1,0 +1,316 @@
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* =========================
+   VARIABLES
+========================= */
+
+:root{
+    --bg-main: #0B1437;
+    --bg-card: #111C44;
+
+    --primary: #3B82F6;
+
+    --success: #22C55E;
+    --warning: #F59E0B;
+    --danger: #EF4444;
+
+    --text-primary: #FFFFFF;
+    --text-secondary: #A3AED0;
+
+    --radius: 20px;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body{
+    min-height: 100vh;
+
+    background: var(--bg-main);
+
+    color: var(--text-primary);
+
+    font-family: 'Poppins', sans-serif;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+
+.sidebar{
+    background: var(--bg-card);
+
+    padding: 25px;
+}
+
+.logo{
+    margin-bottom: 30px;
+}
+
+.logo h2{
+    font-size: 24px;
+}
+
+.menu ul{
+    list-style: none;
+}
+
+.menu li{
+    padding: 15px;
+    margin-bottom: 10px;
+
+    border-radius: 12px;
+
+    transition: 0.3s;
+}
+
+.menu li:hover{
+    background: rgba(255,255,255,0.1);
+
+    cursor: pointer;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.user-actions{
+    display: flex;
+    gap: 10px;
+}
+
+.header h1{
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.user-actions button{
+    width: 45px;
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card h3{
+    margin-bottom: 15px;
+
+    color: var(--text-secondary);
+}
+
+.card p{
+    font-size: 20px;
+    font-weight: 600;
+}
+.card{
+    background: var(--bg-card);
+    padding: 25px;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border: 1px solid black;
+    transition: all 0.3s ease;
+}
+.stat-card{
+    min-height: 120px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card:hover{
+    transform: translateY(-5px);
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,0.3);
+}
+
+/* =========================
+   MAP
+========================= */
+
+.map-container{
+    height: 550px;
+
+    background: var(--bg-card);
+
+    border-radius: var(--radius);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 24px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+.map-container{
+    position: relative;
+    overflow: hidden;
+}
+
+#map{
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius);
+}
+ 
+/* =========================
+   SHARE CARD
+========================= */
+
+.share-card button{
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    margin-top: 10px;
+    margin-right: 10px;
+
+    cursor: pointer;
+}
+
+.share-card button:first-of-type{
+    background: var(--primary);
+
+    color: white;
+}
+
+.share-card button:last-of-type{
+    background: transparent;
+
+    border: 1px solid var(--danger);
+
+    color: var(--danger);
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard{
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: 100vh;
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content{
+    padding: 20px;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 25px;
+}
+
+/* =========================
+   MAP
+========================= */
+
+.phone-info h2,
+.share-card h2{
+    margin-bottom: 20px;
+}
+.phone-info p{
+    margin-bottom: 12px;
+    color: var(--text-secondary);
+}
+.live-badge{
+    position: absolute;
+
+    top: 20px;
+    right: 20px;
+
+    background: rgba(34,197,94,0.15);
+
+    color: var(--success);
+
+    padding: 8px 14px;
+
+    border-radius: 20px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+.sidebar{
+    background: var(--bg-card);
+
+    padding: 25px;
+
+    border-right:
+    1px solid rgba(255,255,255,0.08);
+}
+.map-container{
+    position: relative;
+}
+.map-section{
+    margin-bottom: 25px;
+}
+
+.map-container{
+    height: 550px;
+
+    border: 1px solid black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* =========================
+   BOTTOM SECTION
+========================= */
+
+.bottom-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+.share-card button{
+    transition: 0.3s ease;
+}
+
+.share-card button:hover{
+    transform: translateY(-2px);
+}
