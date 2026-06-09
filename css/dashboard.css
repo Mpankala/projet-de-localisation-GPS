@@ -141,6 +141,29 @@ body{
 
     cursor: pointer;
 }
+#menu-btn{
+    display: none;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: var(--bg-card);
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#menu-btn:hover{
+    transform: scale(1.05);
+}
 
 /* =========================
    CARDS

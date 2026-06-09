@@ -130,6 +130,25 @@ if(menuBtn){
     );
 
 }
+document.addEventListener("click", (e) => {
+
+    const isMobile =
+    window.innerWidth <= 768;
+
+    if(
+        isMobile &&
+        sidebar.classList.contains("active") &&
+        !sidebar.contains(e.target) &&
+        e.target !== menuBtn
+    ){
+
+        sidebar.classList.remove("active");
+
+        menuBtn.textContent = "☰";
+
+    }
+
+});
 const map = new maplibregl.Map({
 
     container: "map",
