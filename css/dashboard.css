@@ -335,3 +335,71 @@ body{
 
     gap: 20px;
 }
+/* =========================
+   DEVICES
+========================= */
+
+.devices-section{
+
+    margin-bottom: 25px;
+
+}
+
+.devices-section h2{
+
+    margin-bottom: 20px;
+
+}
+
+.devices-grid{
+
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 20px;
+
+}
+
+.device-card{
+
+    background: var(--bg-card);
+
+    padding: 20px;
+
+    border-radius: var(--radius);
+
+    border: 1px solid rgba(255,255,255,0.05);
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+.device-card:hover{
+
+    transform: translateY(-5px);
+
+}
+
+.device-card h3{
+
+    margin-bottom: 12px;
+
+}
+
+.device-card span{
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+}
+
+.active-device{
+
+    border: 2px solid var(--primary);
+
+}

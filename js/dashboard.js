@@ -149,6 +149,26 @@ document.addEventListener("click", (e) => {
     }
 
 });
+const devices =
+document.querySelectorAll(".device-card");
+
+devices.forEach(device => {
+
+    device.addEventListener("click", () => {
+
+        document
+        .querySelector(".active-device")
+        ?.classList.remove(
+            "active-device"
+        );
+
+        device.classList.add(
+            "active-device"
+        );
+
+    });
+
+});
 const map = new maplibregl.Map({
 
     container: "map",
