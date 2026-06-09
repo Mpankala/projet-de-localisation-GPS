@@ -110,6 +110,18 @@ new Date().toLocaleTimeString();
 
 }
     */
+const mapStyles = {
+
+    streets:
+    "https://api.maptiler.com/maps/streets-v2/style.json?key=qawnxrN9A0uFg13kFZuz",
+
+    dark:
+    "https://api.maptiler.com/maps/backdrop/style.json?key=qawnxrN9A0uFg13kFZuz",
+
+    satellite:
+    "https://api.maptiler.com/maps/hybrid/style.json?key=qawnxrN9A0uFg13kFZuz"
+
+};
 const menuBtn =
 document.getElementById("menu-btn");
 
@@ -306,6 +318,39 @@ map.on("load", () => {
 map.setPitch(60);
 
 });
-const marker = new maplibregl.Marker()
-    .setLngLat([15.2429, -4.2634])
-    .addTo(map);
+const markerElement = document.createElement("div");
+
+markerElement.className = "custom-marker";
+
+const marker = new maplibregl.Marker({
+    element: markerElement
+})
+.setLngLat([15.2429, -4.2634])
+.addTo(map);
+const styleButtons =
+document.querySelectorAll(".style-btn");
+
+styleButtons.forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        document
+        .querySelector(".active-style")
+        ?.classList.remove(
+            "active-style"
+        );
+
+        btn.classList.add(
+            "active-style"
+        );
+
+        const style =
+        btn.dataset.style;
+
+        map.setStyle(
+            mapStyles[style]
+        );
+
+    });
+
+});

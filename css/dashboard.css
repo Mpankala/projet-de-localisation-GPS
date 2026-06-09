@@ -7,6 +7,44 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* =========================
+   CUSTOM MARKER
+========================= */
+
+.custom-marker{
+
+    width: 22px;
+    height: 22px;
+
+    background: #22C55E;
+
+    border-radius: 50%;
+
+    border: 4px solid white;
+
+    cursor: pointer;
+
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+    0%{
+        box-shadow:
+        0 0 0 0 rgba(34,197,94,0.6);
+    }
+
+    70%{
+        box-shadow:
+        0 0 0 18px rgba(34,197,94,0);
+    }
+
+    100%{
+        box-shadow:
+        0 0 0 0 rgba(34,197,94,0);
+    }
+
+}
 
 /* =========================
    VARIABLES
@@ -399,6 +437,46 @@ body{
 }
 
 .active-device{
+
+    border: 2px solid var(--primary);
+
+}
+/* =========================
+   MAP STYLES
+========================= */
+
+.map-styles{
+
+    display: flex;
+    gap: 10px;
+
+}
+
+.style-btn{
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: var(--bg-card);
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    transition: 0.3s;
+}
+
+.style-btn:hover{
+
+    transform: translateY(-2px);
+
+}
+
+.active-style{
 
     border: 2px solid var(--primary);
 
