@@ -169,6 +169,107 @@ devices.forEach(device => {
     });
 
 });
+const devicesData = {
+
+    iphone: {
+
+        name: "📱 iPhone Personnel",
+        status: "🟢 En ligne",
+        battery: "🔋 82%",
+
+        latitude: "-4.2634",
+        longitude: "15.2429",
+
+        accuracy: "5m"
+    },
+
+    samsung: {
+
+        name: "📱 Samsung Test",
+        status: "🟢 En ligne",
+        battery: "🔋 78%",
+
+        latitude: "-4.2678",
+        longitude: "15.2510",
+
+        accuracy: "10m"
+    },
+
+    tecno: {
+
+        name: "📱 Tecno Spark",
+        status: "🔴 Hors ligne",
+        battery: "🔋 12%",
+
+        latitude: "--",
+        longitude: "--",
+
+        accuracy: "--"
+    }
+
+};
+const deviceCards =
+document.querySelectorAll(".device-card");
+
+const deviceName =
+document.getElementById("device-name");
+
+const deviceStatus =
+document.getElementById("device-status");
+
+const deviceBattery =
+document.getElementById("device-battery");
+
+const latitude =
+document.getElementById("latitude");
+
+const longitude =
+document.getElementById("longitude");
+
+const accuracy =
+document.getElementById("accuracy");
+
+deviceCards.forEach(card => {
+
+    card.addEventListener("click", () => {
+
+        document
+        .querySelector(".active-device")
+        ?.classList.remove(
+            "active-device"
+        );
+
+        card.classList.add(
+            "active-device"
+        );
+
+        const key =
+        card.dataset.device;
+
+        const device =
+        devicesData[key];
+
+        deviceName.textContent =
+        device.name;
+
+        deviceStatus.textContent =
+        device.status;
+
+        deviceBattery.textContent =
+        device.battery;
+
+        latitude.textContent =
+        `Latitude : ${device.latitude}`;
+
+        longitude.textContent =
+        `Longitude : ${device.longitude}`;
+
+        accuracy.textContent =
+        `Précision : ${device.accuracy}`;
+
+    });
+
+});
 const map = new maplibregl.Map({
 
     container: "map",
