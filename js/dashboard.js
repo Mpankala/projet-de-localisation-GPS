@@ -1,4 +1,4 @@
-/*
+
 let map;
 let marker;
 let circle;
@@ -109,4 +109,3 @@ new Date().toLocaleTimeString();
     );
 
 }
-    */
