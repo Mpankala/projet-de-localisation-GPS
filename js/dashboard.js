@@ -172,39 +172,30 @@ devices.forEach(device => {
 const devicesData = {
 
     iphone: {
-
         name: "📱 iPhone Personnel",
         status: "🟢 En ligne",
         battery: "🔋 82%",
-
-        latitude: "-4.2634",
-        longitude: "15.2429",
-
+        latitude: -4.2634,
+        longitude: 15.2429,
         accuracy: "5m"
     },
 
     samsung: {
-
         name: "📱 Samsung Test",
         status: "🟢 En ligne",
         battery: "🔋 78%",
-
-        latitude: "-4.2678",
-        longitude: "15.2510",
-
+        latitude: -4.2678,
+        longitude: 15.2510,
         accuracy: "10m"
     },
 
     tecno: {
-
         name: "📱 Tecno Spark",
         status: "🔴 Hors ligne",
         battery: "🔋 12%",
-
-        latitude: "--",
-        longitude: "--",
-
-        accuracy: "--"
+        latitude: -4.2750,
+        longitude: 15.2350,
+        accuracy: "20m"
     }
 
 };
@@ -248,6 +239,23 @@ deviceCards.forEach(card => {
 
         const device =
         devicesData[key];
+        map.flyTo({
+
+            center: [
+                device.longitude,
+                device.latitude
+            ],
+
+            zoom: 17,
+
+            speed: 1.2
+
+        });
+
+        marker.setLngLat([
+            device.longitude,
+            device.latitude
+        ]);
 
         deviceName.textContent =
         device.name;
@@ -295,6 +303,9 @@ new maplibregl.Marker()
 .addTo(map);
 map.on("load", () => {
 
-  map.setPitch(60);
+map.setPitch(60);
 
 });
+const marker = new maplibregl.Marker()
+    .setLngLat([15.2429, -4.2634])
+    .addTo(map);
