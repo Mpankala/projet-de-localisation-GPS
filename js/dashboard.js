@@ -1,4 +1,4 @@
-
+/*
 let map;
 let marker;
 let circle;
@@ -109,3 +109,52 @@ new Date().toLocaleTimeString();
     );
 
 }
+    */
+const menuBtn =
+document.getElementById("menu-btn");
+
+const sidebar =
+document.querySelector(".sidebar");
+
+if(menuBtn){
+
+    menuBtn.addEventListener(
+        "click",
+        () => {
+
+            sidebar.classList.toggle(
+                "active"
+            );
+
+        }
+    );
+
+}
+const map = new maplibregl.Map({
+
+    container: "map",
+
+    style:
+    "https://api.maptiler.com/maps/streets-v2/style.json?key=qawnxrN9A0uFg13kFZuz",
+
+    center: [15.2429, -4.2634],
+
+    zoom: 15
+
+});
+map.addControl(
+    new maplibregl.NavigationControl()
+);
+new maplibregl.Marker()
+
+.setLngLat([
+    15.2429,
+    -4.2634
+])
+
+.addTo(map);
+map.on("load", () => {
+
+  map.setPitch(60);
+
+});

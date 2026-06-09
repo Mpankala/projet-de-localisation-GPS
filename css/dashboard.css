@@ -7,6 +7,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 /* =========================
    VARIABLES
 ========================= */
@@ -33,23 +34,31 @@
 
 body{
     min-height: 100vh;
-
     background: var(--bg-main);
-
     color: var(--text-primary);
-
     font-family: 'Poppins', sans-serif;
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard{
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: 100vh;
 }
 
 /* =========================
    SIDEBAR
 ========================= */
 
-
 .sidebar{
     background: var(--bg-card);
-
     padding: 25px;
+
+    border-right:
+    1px solid rgba(255,255,255,0.08);
 }
 
 .logo{
@@ -75,8 +84,15 @@ body{
 
 .menu li:hover{
     background: rgba(255,255,255,0.1);
-
     cursor: pointer;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content{
+    padding: 20px;
 }
 
 /* =========================
@@ -91,14 +107,14 @@ body{
     margin-bottom: 25px;
 }
 
-.user-actions{
-    display: flex;
-    gap: 10px;
-}
-
 .header h1{
     font-size: 32px;
     font-weight: 700;
+}
+
+.user-actions{
+    display: flex;
+    gap: 10px;
 }
 
 .user-actions button{
@@ -106,8 +122,22 @@ body{
     height: 45px;
 
     border: none;
-
     border-radius: 50%;
+
+    cursor: pointer;
+}
+
+/* Hamburger */
+
+#menu-btn{
+    display: none;
+
+    background: transparent;
+    border: none;
+
+    color: white;
+
+    font-size: 24px;
 
     cursor: pointer;
 }
@@ -116,30 +146,19 @@ body{
    CARDS
 ========================= */
 
-.card h3{
-    margin-bottom: 15px;
-
-    color: var(--text-secondary);
-}
-
-.card p{
-    font-size: 20px;
-    font-weight: 600;
-}
 .card{
     background: var(--bg-card);
-    padding: 25px;
-    border-radius: var(--radius);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    border: 1px solid black;
-    transition: all 0.3s ease;
-}
-.stat-card{
-    min-height: 120px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding: 25px;
+
+    border-radius: var(--radius);
+
+    border: 1px solid rgba(255,255,255,0.05);
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.2);
+
+    transition: all 0.3s ease;
 }
 
 .card:hover{
@@ -149,84 +168,22 @@ body{
     0 15px 40px rgba(0,0,0,0.3);
 }
 
-/* =========================
-   MAP
-========================= */
+.card h3{
+    margin-bottom: 15px;
+    color: var(--text-secondary);
+}
 
-.map-container{
-    height: 550px;
+.card p{
+    font-size: 20px;
+    font-weight: 600;
+}
 
-    background: var(--bg-card);
-
-    border-radius: var(--radius);
+.stat-card{
+    min-height: 120px;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-
-    font-size: 24px;
-
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-.map-container{
-    position: relative;
-    overflow: hidden;
-}
-
-#map{
-    width: 100%;
-    height: 100%;
-    border-radius: var(--radius);
-}
- 
-/* =========================
-   SHARE CARD
-========================= */
-
-.share-card button{
-    padding: 12px 20px;
-
-    border: none;
-
-    border-radius: 12px;
-
-    margin-top: 10px;
-    margin-right: 10px;
-
-    cursor: pointer;
-}
-
-.share-card button:first-of-type{
-    background: var(--primary);
-
-    color: white;
-}
-
-.share-card button:last-of-type{
-    background: transparent;
-
-    border: 1px solid var(--danger);
-
-    color: var(--danger);
-}
-
-/* =========================
-   DASHBOARD
-========================= */
-
-.dashboard{
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    min-height: 100vh;
-}
-
-
-/* =========================
-   MAIN CONTENT
-========================= */
-
-.main-content{
-    padding: 20px;
 }
 
 /* =========================
@@ -243,17 +200,37 @@ body{
 }
 
 /* =========================
-   MAP
+   MAP SECTION
 ========================= */
 
-.phone-info h2,
-.share-card h2{
-    margin-bottom: 20px;
+.map-section{
+    margin-bottom: 25px;
 }
-.phone-info p{
-    margin-bottom: 12px;
-    color: var(--text-secondary);
+
+.map-container{
+    position: relative;
+
+    height: 550px;
+
+    background: var(--bg-card);
+
+    border-radius: var(--radius);
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255,255,255,0.05);
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.2);
 }
+
+#map{
+    width: 100%;
+    height: 100%;
+}
+
+/* Badge LIVE */
+
 .live-badge{
     position: absolute;
 
@@ -269,32 +246,59 @@ body{
     border-radius: 20px;
 
     font-size: 14px;
-
     font-weight: 600;
-}
-.sidebar{
-    background: var(--bg-card);
 
-    padding: 25px;
-
-    border-right:
-    1px solid rgba(255,255,255,0.08);
-}
-.map-container{
-    position: relative;
-}
-.map-section{
-    margin-bottom: 25px;
+    z-index: 10;
 }
 
-.map-container{
-    height: 550px;
+/* =========================
+   PHONE INFO
+========================= */
 
-    border: 1px solid black;
+.phone-info h2,
+.share-card h2{
+    margin-bottom: 20px;
+}
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.phone-info p{
+    margin-bottom: 12px;
+    color: var(--text-secondary);
+}
+
+/* =========================
+   SHARE CARD
+========================= */
+
+.share-card button{
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    margin-top: 10px;
+    margin-right: 10px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.share-card button:hover{
+    transform: translateY(-2px);
+}
+
+.share-card button:first-of-type{
+    background: var(--primary);
+    color: white;
+}
+
+.share-card button:last-of-type{
+    background: transparent;
+
+    border: 1px solid var(--danger);
+
+    color: var(--danger);
 }
 
 /* =========================
@@ -303,14 +307,8 @@ body{
 
 .bottom-section{
     display: grid;
+
     grid-template-columns: 1fr 1fr;
 
     gap: 20px;
-}
-.share-card button{
-    transition: 0.3s ease;
-}
-
-.share-card button:hover{
-    transform: translateY(-2px);
 }

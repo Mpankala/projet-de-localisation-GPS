@@ -4,70 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LiveTrack Dashboard</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+    <link
+        href="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.css"
+        rel="stylesheet"
+    >
+
+    <script src="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.js"></script>
+
     <link rel="stylesheet" href="/css/dashboard.css">
     <link rel="stylesheet" href="/css/responsive.css">
 </head>
+
 <body>
 
-    <div class="dashboard">
+<div class="dashboard">
 
-        <!-- Sidebar -->
-        <aside class="sidebar">
+    <!-- Sidebar -->
+    <aside class="sidebar">
 
-            <div class="logo">
-                <h2>📍 LiveTrack</h2>
+        <div class="logo">
+            <h2>📍 LiveTrack</h2>
+        </div>
+
+        <nav class="menu">
+            <ul>
+                <li>🏠 Dashboard</li>
+                <li>🗺 Carte</li>
+                <li>📜 Historique</li>
+                <li>⚙ Paramètres</li>
+            </ul>
+        </nav>
+
+    </aside>
+
+    <!-- Contenu principal -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="header">
+
+            <button id="menu-btn">
+                ☰
+            </button>
+
+            <h1>Dashboard</h1>
+
+            <div class="user-actions">
+                <button>🔔</button>
+                <button>👤</button>
             </div>
 
-            <nav class="menu">
-                <ul>
-                    <li>🏠 Dashboard</li>
-                    <li>🗺 Carte</li>
-                    <li>📜 Historique</li>
-                    <li>⚙ Paramètres</li>
-                </ul>
-            </nav>
+        </header>
 
-        </aside>
+        <!-- Statistiques -->
+        <section class="stats">
 
-        <!-- Contenu principal -->
-        <main class="main-content">
+            <div class="card stat-card">
+                <h3>Statut</h3>
+                <p>🟢 En ligne</p>
+            </div>
 
-            <!-- Header -->
-            <header class="header">
-                <h1>Dashboard</h1>
+            <div class="card">
+                <h3>Batterie</h3>
+                <p>82%</p>
+            </div>
 
-                <div class="user-actions">
-                    <button>🔔</button>
-                    <button>👤</button>
-                </div>
-            </header>
+            <div class="card">
+                <h3>GPS</h3>
+                <p id="gps-status">Connexion...</p>
+            </div>
 
-            <!-- Statistiques -->
-            <section class="stats">
+            <div class="card">
+                <h3>Dernière MAJ</h3>
+                <p id="last-update">--:--:--</p>
+            </div>
 
-                <div class="card stat-card">
-                    <h3>Statut</h3>
-                    <p>🟢 En ligne</p>
-                </div>
+        </section>
 
-                <div class="card">
-                    <h3>Batterie</h3>
-                    <p>82%</p>
-                </div>
-                <div class="card">
-    <h3>GPS</h3>
-    <p id="gps-status">Connexion...</p>
-</div>
-<div class="card">
-    <h3>Dernière MAJ</h3>
-    <p id="last-update">--:--:--</p>
-</div>
+        <!-- Carte -->
+        <section class="map-section">
 
-            </section>
-
-            <!-- Carte GPS -->
-             <div class="map-container">
+            <div class="map-container">
 
                 <span class="live-badge">
                     🟢 LIVE
@@ -76,39 +94,42 @@
                 <div id="map"></div>
 
             </div>
-            
 
-            </section>
+        </section>
 
-            <!-- Informations -->
-            <section class="bottom-section">
-                <div class="phone-info card">
+        <!-- Informations -->
+        <section class="bottom-section">
 
-                    <h2>📱 Mon téléphone</h2>
+            <div class="phone-info card">
 
-                    <p id="latitude">Latitude : --</p>
+                <h2>📱 Mon téléphone</h2>
 
-                    <p id="longitude">Longitude : --</p>
+                <p id="latitude">Latitude : --</p>
 
-                    <p id="accuracy">Précision : --</p>
+                <p id="longitude">Longitude : --</p>
 
-                </div>
+                <p id="accuracy">Précision : --</p>
 
-                <div class="share-card card">
-                    <h2>🔗 Partage</h2>
+            </div>
 
-                    <p>https://livetrack.com/share/abc123</p>
+            <div class="share-card card">
 
-                    <button>Copier</button>
-                    <button>Désactiver</button>
-                </div>
+                <h2>🔗 Partage</h2>
 
-            </section>
+                <p>https://livetrack.com/share/abc123</p>
 
-        </main>
+                <button>Copier</button>
+                <button>Désactiver</button>
 
-    </div>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="/js/dashboard.js"></script>
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="/js/dashboard.js"></script>
+
 </body>
 </html>

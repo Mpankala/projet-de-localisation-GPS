@@ -1,0 +1,140 @@
+/* ===================================
+   TABLETTE
+=================================== */
+
+@media (max-width: 1024px){
+
+    .dashboard{
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar{
+        width: 100%;
+        border-right: none;
+        border-bottom:
+        1px solid rgba(255,255,255,0.08);
+    }
+
+    .stats{
+        grid-template-columns:
+        repeat(2, 1fr);
+    }
+
+    .bottom-section{
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* ===================================
+   MOBILE
+=================================== */
+
+@media (max-width: 768px){
+
+    /* Dashboard */
+
+    .dashboard{
+        display: block;
+    }
+
+    /* Header */
+
+    .header{
+        position: sticky;
+        top: 0;
+
+        z-index: 1000;
+
+        background: var(--bg-main);
+
+        padding-bottom: 15px;
+    }
+
+    #menu-btn{
+        display: block;
+    }
+
+    /* Sidebar */
+
+    .sidebar{
+        position: fixed;
+
+        top: 0;
+        left: -280px;
+
+        width: 280px;
+        height: 100vh;
+
+        z-index: 2000;
+
+        transition: 0.3s ease;
+
+        overflow-y: auto;
+    }
+
+    .sidebar.active{
+        left: 0;
+    }
+
+    /* Main */
+
+    .main-content{
+        padding: 15px;
+    }
+
+    /* Stats */
+
+    .stats{
+        grid-template-columns: 1fr;
+    }
+
+    /* Carte */
+
+    .map-container{
+        height: 350px;
+    }
+
+    /* Bottom */
+
+    .bottom-section{
+        grid-template-columns: 1fr;
+    }
+
+    /* Titres */
+
+    .header h1{
+        font-size: 24px;
+    }
+
+    .logo h2{
+        font-size: 20px;
+    }
+
+}
+
+/* ===================================
+   PETITS SMARTPHONES
+=================================== */
+
+@media (max-width: 480px){
+
+    .card{
+        padding: 18px;
+    }
+
+    .card p{
+        font-size: 16px;
+    }
+
+    .phone-info h2,
+    .share-card h2{
+        font-size: 18px;
+    }
+
+    .share-card button{
+        width: 100%;
+        margin-right: 0;
+    }
+
+}
