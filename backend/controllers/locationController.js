@@ -16,7 +16,25 @@ const saveLocation = async (req, res) => {
     });
   }
 };
+const getLatestLocation = async (req, res) => {
+  try {
+
+    const latestLocation = await Location
+      .findOne()
+      .sort({ timestamp: -1 });
+
+    res.status(200).json(latestLocation);
+
+  } catch (error) {
+
+    res.status(500).json({
+      message: error.message
+    });
+
+  }
+};
 
 module.exports = {
   saveLocation,
+  getLatestLocation
 };
