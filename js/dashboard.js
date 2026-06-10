@@ -227,6 +227,35 @@ if (navigator.geolocation) {
 
             console.log("GPS :", lat, lng);
 
+                try {
+
+                    const response = await fetch(
+                        "https://localisation-backend.onrender.com/api/location",
+                        {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify({
+                                latitude: lat,
+                                longitude: lng
+                            })
+                        }
+                    );
+
+                    const data = await response.json();
+
+                    console.log("Position enregistrée :", data);
+
+                } catch (error) {
+
+                    console.error(
+                        "Erreur envoi GPS :",
+                        error
+                    );
+
+                }
+
             map.flyTo({
                 center: [lng, lat],
                 zoom: 17
